@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Hospital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, {{ username }}</h2>
+        <a href="/appointment"><button>Book Appointment</button></a><br><br>
+        <h3>Your Appointments:</h3>
+        {% if appointments %}
+            <ul style="list-style:none; padding:0;">
+                {% for a in appointments %}
+                <li>🩺 {{ a[1] }} with Dr. {{ a[2] }} on {{ a[3] }} at {{ a[4] }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No appointments yet.</p>
+        {% endif %}
+        <br>
+        <a href="/logout"><button>Logout</button></a>
+    </div>
+</body>
+</html>

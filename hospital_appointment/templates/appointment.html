@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Book an Appointment</h2>
+        <form method="POST">
+            <input type="text" name="patient_name" placeholder="Your Name" required><br>
+            <input type="text" name="doctor_name" placeholder="Doctor's Name" required><br>
+            <input type="date" name="date" required><br>
+            <input type="time" name="time" required><br>
+            <button type="submit">Book</button>
+        </form>
+        <p><a href="/dashboard">Back to Dashboard</a></p>
+    </div>
+</body>
+</html>
